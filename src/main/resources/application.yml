@@ -1,0 +1,24 @@
+logging:
+  level:
+    org:
+      springframework: DEBUG
+server:
+  error:
+    include-stacktrace: ON-TRACE-PARAM
+spring:
+  # ====================
+  # = Data Source
+  # ====================
+  data:
+    cassandra:
+      basePackages: com.exp.restful.services.db
+      contactpoints: 127.0.0.1
+      keyspace: essentials
+      port: 9042
+      schema-action: create_if_not_exists
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+test:
+  setting:
+    demo: ${ANT_HOME}
